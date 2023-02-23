@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+		<div class="slides">
+			<!-- Introduction -->
+			<section>
+					<section>Python <br> et data science <br> pour la finance</section>
+					<section>Introduction</section>
+					<section data-markdown style="text-align: left;">
+						<script type="text/template">
+							## Qui suis-je ?
+							* Data Scientist <!-- .element: class="fragment" -->
+								* Prediction d'absences de salariés <!-- .element: class="fragment" -->
+								* Prédiction d'erreurs de bulletins de paie <!-- .element: class="fragment" -->
+							* Doctorat en économie <!-- .element: class="fragment" -->
+								* Microsimulation fiscale sur les ménages français <!-- .element: class="fragment" -->
+							--- 
+							8 années d'expérience en traitement de la donnée avec Python et packages associés.<!-- .element: class="fragment" -->  
+
+							Peu de connaissances en finance... <!-- .element: class="fragment" -->
+							</section>
+						</script>
+
+					</section>
+
+					<section data-markdown style="text-align: left;font-size: 30px;">
+						<script type="text/template">
+							## Objectif du cours
+		
+							- Donner une idée générale de l'utilisation de la donnée/data
+								- En entreprise en général
+								- Sur la finance en particulier
+							- Faire manipuler de la donnée:
+								- Avec Python
+								- Sur des données financières si possible
+								- Sur trois types d'utilisation ≠
+									- Times Series
+									- [Fraud detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+									- [Risque de défaut de crédit](https://www.kaggle.com/competitions/home-credit-default-risk)
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Objectif du cours
+							⚠️ L'objectif n'est pas de vous faire devenir des data-scientists spécialistes de la finance en 21h.  
+
+							-->  Pas de cours formel sur l'utilisation de Python et Pandas  
+							* apprentissage par l'exemple (à vous de généraliser vos exemples pour le/les projets d'application)
+							---
+							## Support de cours
+							- [github.com/adrienpacifico/Python_for_finance](https://github.com/adrienpacifico/Python_for_finance)
+							---
+                            ![image](/images/Ai_in_finance.png)
+                            ---
+							Pour aller plus loin:
+							- [kaggle.com](https://www.kaggle.com/)
+							- Livre pour débuter: ["Hands-On Data Analysis with Pandas"](https://www.amazon.fr/Hands-Data-Analysis-Pandas-visualization/dp/1800563450)
+							- Livre de référence en pandas : [Effective Pandas (Matt Harisson)](https://www.amazon.fr/Effective-Pandas-Patterns-Data-Manipulation/dp/B09MYXXSFM/ref=asc_df_B09MYXXSFM/?tag=googshopfr-21&linkCode=df0&hvadid=553673741470&hvpos=&hvnetw=g&hvrand=5444010626631151628&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1006356&hvtargid=pla-1599278295760&psc=1)
+							---
+							## Evaluation (béta version)
+		
+							- Bonus de participation orale (5 points max).
+							- Potentiellement des QCM et devoirs (5 points max).
+							- Un projet a rendre sous forme de Jupyter notebook (ou autre) (15 points)
+
+							⚠️ Le barême et les modalités de notations pourrons évoluer
+							---
+							Google form
+					<section data-markdown>
+						</script>
+					</section>
+					
+						<script type="text/template">
+
+						</script>
+					</section>
+			</section>
+			<section>
+					<section data-markdown>
+						<script type="text/template" style="text-align: left;">
+							# I Data science 
+							---
+							## Qu'est-ce que la data science ? I
+		
+							> La science des données est l'étude de l’extraction automatisée de connaissance à partir de grands ensembles de données <!-- .element: class="fragment" --> 
+
+							[Wikipédia](https://fr.wikipedia.org/w/index.php?title=Science_des_donn%C3%A9es&oldid=199077261) <!-- .element: class="fragment" -->
+							---
+							## Qu'est-ce que la data science ? II
+							[image](images/04-Data-Science-Landscape.JPG) <!-- data-background="images/my-image.jpg" "-->  
+							La data science couvre de nombreux domaines d'expertises.
+							
+							---
+							## Qu'est-ce que la data science ? III
+							![image](images/venn_diagram.png) <!-- .element height="50%" width="80%" -->
+							---
+							## Qu'est-ce que la data science ? III
+							La data science peut être vue comme l'intersection de trois champs:
+							1. La statistique
+							2. L'informatique
+							3. Et l'expertise métier 
+							---
+							## Qu'est-ce que la data science ? IV
+							![image](images/data_science_process.png)
+							[source](https://github.com/dataprofessor/infographic/)
+							---
+							## Qu'est-ce que la data science ? IV
+							La data science est un processus qui peut-être divisé en différents métiers et activités.
+							---
+							## Qu'est-ce que la data science ? IV (ii)
+							
+							![image](images/data_science_process_2.png)
+							---
+							## Qu'est-ce que la data science ? IV (ii)
+							La data science est un processus qui peut-être divisé en différents métiers.
+							[source de l'image](https://towardsai.net/p/l/the-universe-of-data-science-roles-demystified)
+							---
+							La data science concerne de nombreux domaines de [compétences et outils techniques](/images/made_with_ml.png).  
+							(source: [madewithml.com/](https://madewithml.com/) ).
+							![image](/images/made_with_ml.png)
+							---
+							[De nombreux outils](http://mattturck.wpenginepowered.com/wp-content/uploads/2021/12/2021-MAD-Landscape-v3.pdf)
+							---
+							Intelligence artificielle/machine learning ?
+							- Chat GPT 
+							- text to image (e.g. Midjourney)
+							- speetch to text (google voice)
+							- Text summarization ([hugging face](https://huggingface.co/plguillou/t5-base-fr-sum-cnndm))
+							---
+							
+							
+							Types de Données: 
+							Quels sont les types de données existantes ?<!-- .element: class="fragment" -->
+							- Données structurées:<!-- .element: class="fragment" -->
+								- Données tabulaires (type Excel)<!-- .element: class="fragment" -->
+							- Données non structurées:<!-- .element: class="fragment" -->
+								- Texte<!-- .element: class="fragment" -->
+								- Image<!-- .element: class="fragment" -->
+								- Vidéo<!-- .element: class="fragment" -->
+								- Audio<!-- .element: class="fragment" -->
+							- Semi-structurées:<!-- .element: class="fragment" -->
+								- json<!-- .element: class="fragment" -->
+								- xml<!-- .element: class="fragment" -->
+	
+						</script>
+					</section>
+			</section>
+			<section>
+					
+						<section data-markdown>
+							<script type="text/template" style="text-align: left;">
+								# Utilisation de la data science dans la finance
+								---
+								Quelles sont les utilisations de la data science dans la finance ?
+
+								---
+								- Credit scroring
+								- Fraud detection
+								- Trade execution/trading algorithms (trading robots)
+								- Customer service (exemple)[https://dash.gallery/dash-nlp/]
+								- RH 
+								---
+								Credit scoring
+								* Determiner la probabilité d'un particulier, entreprise, pays, etc de ne pas rembourser un crédit.
+								---
+								Fraud detection
+								* Determiner la porbabilité qu'une transaction soit frauduleuse.
+								---
+								
+
+								> En 2019  0.036% des transactions faites par carte de paiement étaient frauduleuses.   
+
+								[BCE](https://www.ecb.europa.eu/pub/cardfraud/html/ecb.cardfraudreport202110~cac4c418e8.en.html)
+								---
+								Trading algorithms/robots:
+								Utiliser de l'information et des modèles statistiques pour réaliser des transactions financières.
+
+								Peut-on gagner de l'argent avec un trading robot?
+								---
+								> ML and DL methods are able to discover statistical inefficiencies
+								and even economic inefficiencies that are not discoverable by traditional econometric
+								methods, such as multivariate OLS regression. It is therefore to be assumed that new
+								and better analysis methods make it harder to discover alpha-generating opportuni‐
+								ties and strategies.
+
+								Artificial Intelligence in Finance: A Python-Based Guide,
+								Yves Hilpisch (2020).
+								---
+								Customer service:
+								1. Acquisition de nouveaux clients.
+								2. Empêcher le départ/l'attrition de clients (consumer retention).
+								3. Ciblage de produits sur certains clients (e.g. PEA ou Livret A).  
+								4. Satisfaction clients en général (gestion des plaintes, mesure de l'efficacité d'un conseiller)
+								---
+								RH:  
+
+								Gestion des salariés au sein d'une institution financière (primes incitatives, 
+								promotions, retention de salariés, recrutements)
+								---
+								Fintech  🇫🇷🐓: 
+								https://francefintech.org/nos-membres/
+							</script>
+						</section>
+				
+			</section>
+			<section>
+				<section data-markdown style="text-align: left;font-size: 20 px;">
+					<script type="text/template">
+						# Les données utilisées en finance
+						---
+						Quelles sont les données utilisées en finance ?
+						---
+						> algorithms with “standard”
+						data from typical data sources, such as exchanges or data service providers like Refi
+						nitiv or Bloomberg, might only be of limited value. This is due to the fact that such
+						data is intensively analyzed by many, if not all, relevant players in the market, making
+						it hard or even impossible to identify alpha-generating opportunities or similar com
+						petitive advantage. As a consequence, large buy-side institutions invest particularly
+						heavily in getting access to alternative data.   
+
+
+						Artificial Intelligence in Finance: A Python-Based Guide 1st Edition
+						by Yves Hilpisch 
+						
+						---
+						(valeurs boursières, indices statistiques (inflation chomages), tweets/actualité(nowcasting)/recherches google )
+						Web-scraped data
+						* Credit cards and point-of-sales (POS) systems
+						* Social media sentiment
+						* Weather
+						* Search trends
+						* Web traffic
+						* Supply chain data
+						* Energy production data
+						* Consumer profiles
+						* Satellite imagery/geospacial data
+						* Ocean vessel tracking
+						* Wearables, drones, Internet of Things (IoT) sensors
+						* Crowd-sourced data
+						---
+
+
+
+
+
+					</script>
+				</section>
+			</section>
+				<section>
+					<section data-markdown>
+						<script type="text/template" style="text-align: left;">
+							# Les outils de la data science
+							---
+							Excel vs. R vs. Python
+							---
+							1. Python
+							2. Librairies/Logiciels libres
+								1. Pandas
+								2. scikit-learn
+								3. Statsmodels
+								4. Bash
+								5. Pytorch
+							3. Contrôle de version
+								1. git
+								2. GitHub/gitlab
+							---
+							De nombreux outils issus de la data science ont été créé par le monde de la finance.
+							- Pandas a été créé chez AQR Capital Management
+							- Two sigma a longtemps été un des mécènes de pandas
+							- Bloomberg propose de nombreux outils sur Github
+
+							---
+							Presentation de Github  
+							---
+							Presentation de Kaggle
+							---
+
+						</script>
+					</section>
+				</section>
+		</section>
+			<section>
+				<section data-markdown class="stretch">
+					<script type="text/template">
+						
+					</script>
+				</section>
+			<section data-markdown>
+				<script type="text/template">
+					## Markdown support
+
+					Write content using inline or external Markdown.
+					Instructions and more info available in the [docs](https://revealjs.com/markdown/).
+
+					```html []
+					<section data-markdown>
+					## Markdown support
+
+					Write content using inline or external Markdown.
+					Instructions and more info available in the [docs](https://revealjs.com/markdown/).
+					</section>
+					```
+				</script>
+			</section>
+			</section>
+		</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+			 // =============== REVEAL FRAGMENTS ONLY ONCE  ===============
+			// Nobody wants to see the same joke twice.
+			// Following the example of https://shwr.me/?full#11
+			Reveal.on( 'fragmentshown', event => {
+				event.fragment.classList.remove("fragment");
+			} );
+			// ===========================================================
+		</script>
+	</body>
+</html>
